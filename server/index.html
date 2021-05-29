@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>Node Arduino</title>
+
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/animate.css">
+     <link rel="stylesheet" href="css/owl.carousel.css">
+     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="css/tooplate-style.css">
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+    <script>
+     const socket = io();
+     
+     socket.on('lpm', function(data)
+     {
+       console.log(data);
+       let lpm = document.getElementById('latidos');
+       lpm.innerHTML = `${data} lpm`;
+     });
+   </script>
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>
+
+     <!-- MENU -->
+     <section class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="index.html" class="navbar-brand">Proyecto de Electrónica Digital</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="#top" class="smoothScroll">Inicio</a></li>
+                         <li><a href="#about" class="smoothScroll">¿Cómo usarlo?</a></li>
+                         <li><a href="#appointment" class="smoothScroll">Beneficios</a></li>
+                         <li><a href="#news" class="smoothScroll">Niveles de LPM</a></li>
+                         <li class="appointment-btn"><a href="#news">Usar el pulsómetro</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+     <!-- HOME -->
+     <section id="home" class="slider" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                         <div class="owl-carousel owl-theme">
+                              <div class="item item-first">
+                                   <div class="caption">
+                                        <div class="col-md-offset-1 col-md-10">
+                                             <h3>Proyecto desarollado por:</h3>
+                                             <h1>Diego Armando Lozano</h1>
+                                             <a href="#appointment2" class="section-btn btn btn-default smoothScroll">Ponlo a Prueba</a>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <div class="item item-second">
+                                   <div class="caption">
+                                        <div class="col-md-offset-1 col-md-10">
+                                             <h3>Un herramienta tan común como necesaria</h3>
+                                             <h1>El Pulsómetro</h1>
+                                             <a href="#about" class="section-btn btn btn-default btn-gray smoothScroll">¡Aprende a cómo usarlo!</a>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <div class="item item-third">
+                                   <div class="caption">
+                                        <div class="col-md-offset-1 col-md-10">
+                                             <h3>Profesionales recomiendan ser más responsables con nuestra salud</h3>
+                                             <h1>Conoce los beneficios de conocer tus latidos por minuto</h1>
+                                             <a href="#appointment" class="section-btn btn btn-default btn-blue smoothScroll">Aprende</a>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+               </div>
+          </div>
+     </section>
+
+
+     <!-- ABOUT -->
+     <section id="about">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="about-info">
+                              <h2 class="wow fadeInUp" data-wow-delay="0.6s">Bienvenido, ¿Sabes cómo usar el pulsómetro?</h2>
+                              <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <h4>1. Limpia el sensor</h4>
+                                   <h4>2. Limpia tu dedo</h4>
+                                   <h4>3. Mantente en estado de reposo</h4>
+                                   <h4>4. Manten la posición</h4>
+                                   <h4>5. Anota tus resultados</h4>
+                                   
+                              </div>
+                              
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </section>
+
+
+     <!-- TEAM -->
+     <section id="appointment" data-stellar-background-ratio="3">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="about-info">
+                              <img src="images/appointment-image.jpg" class="img-responsive" alt="">
+                         </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                         <div class="about-info">
+                              <h2 class="wow fadeInUp" data-wow-delay="0.1s">¿Por qué es importante medir nuestra frecuncia cardiaca?</h2>
+                              <p>- Determinar la condición atlética</p>
+                              <p>- Conocer la capacidad de recuperación tras la actividad</p>
+                              <p>- Establecer el límite de rendimiento</p>
+                              <p>- Detectar variaciones en la actividad cardiovascular</p>
+                              <p>- Conocer la respuesta del cuerpo al esfuerzo</p>
+                              <p>- Poder valorar la evolución del entrenamiento y mejorarlo según las condiciones y objetivos establecidos</p>
+                              <p>- Prevenir el sobre-entrenamiento o el infra-entrenamiento</p>
+                              <p>- Añadir variedad en las sesiones de entreno</p>
+                              <p>- Saber cómo dosificar el ritmo de entrenamiento para poder maximizar los beneficios del ejercicio</p>
+
+                         </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+               </div>
+          </div>
+     </section>
+
+
+     <!-- NEWS -->
+     <section id="news" data-stellar-background-ratio="2.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-12 col-sm-12">
+                         <!-- SECTION TITLE -->
+                         <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                              <h1>Niveles de LPM</h1>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                         <h2>Inadecuado</h2>
+                         <h3>86 o más</h3>
+                    </div>
+                    
+                    <div class="col-md-4 col-sm-6">
+                         <h2>Normal</h2>
+                         <h3>70 - 84</h3>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                         <h2>Excelente</h2>
+                         <h3>62 - 68</h3>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+     <!-- MAKE AN APPOINTMENT -->
+     <section id="news" data-stellar-background-ratio="3">
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-10 col-sm-6">
+                         <h2>A continuación podrá visualizar las señales: </h2>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                    </div>
+                    
+                    <div class="col-md-4 col-sm-6"> 
+                         <h1 id="latidos"></h1>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                    </div>
+               </div>
+          </div>
+     </section>
+
+     
+
+     <!-- FOOTER -->
+     <footer id="appointment3" data-stellar-background-ratio="5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-6">
+                         <div class="footer-thumb"> 
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6"> 
+                         <div class="footer-thumb"> 
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s"></h4>
+                              <img src="images/logo.png" alt="">
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6"> 
+                         <div class="footer-thumb">
+                              <div class="opening-hours">
+                              </div> 
+                         </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 border-top">
+                         <div class="col-md-4 col-sm-6">
+                              <div class="copyright-text"> 
+                                   <p>Copyright &copy; 2021 Electrónica Digital
+                                   
+                                   | Diseño: Pulsómetro</p>
+                              </div>
+                         </div>
+
+                         <div class="col-md-2 col-sm-2 text-align-center">
+                              <div class="angle-up-btn"> 
+                                  <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
+                              </div>
+                         </div>   
+                    </div>
+                    
+               </div>
+          </div>
+     </footer>
+
+     <!-- SCRIPTS -->
+     <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.sticky.js"></script>
+     <script src="js/jquery.stellar.min.js"></script>
+     <script src="js/wow.min.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/custom.js"></script>
+
+</body>
+</html>
